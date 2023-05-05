@@ -4,7 +4,7 @@
             <div class="offset-md-2 col-lg-5 col-md-7 offset-lg-4 offset-md-3">
                 <div class="panel border bg-white">
                     <div class="panel-heaing">
-                        <h3 class="pt-3 font-weight-bold">
+                        <h3 class="pt-3 font-weight-bold text-center">
                             Login
                         </h3>
                     </div>
@@ -24,15 +24,24 @@
                                         
                                     </span>
                                     <input type="password" placeholder="Password">
+                                    <span (click)="hideShowPass()" class="fa  {{eyeIcon}}"></span>
                                 </div>
                             </div>
                             <div class="form-inline fr mt-4">
                                 <a id="forget" class ="font-weight-bold" href="">Forget Password</a>
                             </div>
-                            <button type="submit" class="btn btn-primary btn-lock m-4 w-100">Login</button>
+                            <button type="submit" class="btn btn-primary btn-lock mt-4 w-100">Login</button>
                             <div class="text-center pt-4 text-muted">Don't have account <a id="forget" href="" routerLink="/signup">Sign Up</a></div>
-                            <h3>This is test</h3>
+                            
                         </form>
+                    </div>
+                    <div class="mx-3 my-2 py-2 bordert">
+                        <div class="text-center py-5">
+                            <a href="https://www.facebook.com" target="_blank" class="px-2"><img src="assets/images/facebook.png" alt=""></a>
+                            <a href="https://www.gmail.com" target="_blank" class="px-2"><img src="assets/images/search.png" alt=""></a>
+                            <a href="https://www.github.com" target="_blank" class="px-2"
+                            ><img src="assets/images/github.png" alt=""></a>
+                        </div>
                     </div>
                 </div>
             </div>
