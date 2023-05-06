@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import ValidateForm from 'src/app/heplers/validateform';
 
 @Component({
   selector: 'app-login',
@@ -34,24 +35,14 @@ export class LoginComponent implements OnInit{
       
     }
     else{
-      this.validateAllFormFieled(this.loginForm);
+      ValidateForm.validateAllFormFieled(this.loginForm);
       alert('your form is invalid');
       
     }
 
   }
 
-  private validateAllFormFieled(formGroup:FormGroup){
-    Object.keys(formGroup.controls).forEach(field=>{
-      const control = formGroup.get(field);
-      if(control instanceof FormControl){
-        control.markAsDirty({onlySelf:true});
-      }
-      else if(control instanceof FormGroup){
-        this.validateAllFormFieled(control)
-      }
-    })
-  }
+  
 
   hideShowPass(){
      this.isText=!this.isText;
