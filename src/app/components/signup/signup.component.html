@@ -12,8 +12,7 @@
                         <form [formGroup]="signUpForm">
                             <div class="form-group pt-3">
                                 <div class="input-field" [class.error]="signUpForm.controls['firstName'].dirty && signUpForm.hasError('required','firstName')">
-                                    <span class="fa fa-user p-2">
-                                        
+                                    <span class="fa fa-user p-2">                                      
                                     </span>
                                     <input formControlName="firstName" type="text" placeholder="FirstName">
                                 </div>
@@ -31,16 +30,14 @@
                             <div class="form-group pt-3">
                                 <div class="input-field" [class.error]="signUpForm.controls['email'].dirty && signUpForm.hasError('required','email')">
                                     <span class="fa fa-user p-2">
-                                        
                                     </span>
-                                    <input formArrayName="email" type="text" placeholder="Email">
+                                    <input formControlName="email" type="text" placeholder="Email">
                                 </div>
                             </div>
-                            <small *ngif="signUpForm.controls['email'].dirty && signUpForm.hasError('required','email')" class="text-danger">*Email is required</small>
+                            <small *ngIf="signUpForm.controls['email'].dirty && signUpForm.hasError('required','email')" class="text-danger">*Email is required</small>
                             <div class="form-group pt-3">
                                 <div class="input-field" [class.error]="signUpForm.controls['username'].dirty && signUpForm.hasError('required','username')">
                                     <span class="fa fa-user p-2">
-                                        
                                     </span>
                                     <input formControlName="username" type="text" placeholder="Username">
                                 </div>
@@ -51,7 +48,7 @@
                                     <span class="fa fa-lock p-2">
                                         
                                     </span>
-                                    <input formControlName="password" type="password" placeholder="Password">
+                                    <input formControlName="password" [type]="type" placeholder="Password">
                                     <span (click)="hideShowPass()" class="fa  {{eyeIcon}}"></span>
                                 </div>
                             </div>
