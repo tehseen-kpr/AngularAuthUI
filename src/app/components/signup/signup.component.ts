@@ -44,11 +44,11 @@ export class SignupComponent implements OnInit {
           this.router.navigate(['login']);
 
         },
-        error:(err)=>{
+        error:(err=>{
 
           alert(err?.error.message);
-
-        }
+        
+        })
       })
     }
     else{

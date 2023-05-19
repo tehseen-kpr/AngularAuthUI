@@ -34,7 +34,7 @@ export class LoginComponent implements OnInit{
 
   onLogin(){
     if(this.loginForm.valid){
-      console.log(this.loginForm.value);
+      /* console.log(this.loginForm.value); */
 
       this.auth.login(this.loginForm.value)
       .subscribe({
@@ -43,11 +43,11 @@ export class LoginComponent implements OnInit{
           this.loginForm.reset();
           this.router.navigate(['dashboard']);
         },
-        error:(err)=>{
+        error:(err=>{
           alert(err?.error.message)
-        }
+        })
         
-      })
+      });
     }
     else{
       ValidateForm.validateAllFormFieled(this.loginForm);
