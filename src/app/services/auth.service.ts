@@ -17,4 +17,17 @@ export class AuthService {
     /* return this.http.post<any>('${this.baseUrl}authenticate',loginObj); */
     return this.http.post<any>(this.baseUrl+'authenticate',loginObj);
   }
+
+  storeToken(tokenValue:string){
+    localStorage.setItem('token',tokenValue);
+  }
+
+  getToken(){
+    return localStorage.getItem('token');
+  }
+
+  isLoggedIn():boolean{
+    //if local storage has value it'll return true otherwise false.
+    return !!localStorage.getItem('token');
+  }
 }
