@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { CanActivate } from '@angular/router';
+import { CanActivate, Router } from '@angular/router';
 import { AuthService } from '../services/auth.service';
 
 
@@ -11,7 +11,7 @@ export class AuthGuard implements CanActivate {
   /**
    *
    */
-  constructor(private auth:AuthService) {
+  constructor(private auth:AuthService,private router:Router) {
     
     
   }
@@ -20,8 +20,12 @@ export class AuthGuard implements CanActivate {
     if(this.auth.isLoggedIn()){
       return true;
     }
-    else
+    else{
+      alert('Please login first with valid credentials');
+      this.router.navigate(['login']);
       return false;
+    }
+      
   }
 
     
