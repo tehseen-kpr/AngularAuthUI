@@ -1,6 +1,19 @@
+<nav class="navbar navbar-light bg-light">
+    <div class="container-field">
+        <a class="navbar-brand" href="#">Angular Auth</a>
+    </div>
+    <div>
+        <h4>Hellow, {{fullName}}</h4>
+    </div>
+</nav>
+  
+
+
+
 <button class="btn btn-danger" (click)="logOut()">Log Out</button>
 <h3>dashboard works!</h3>
-
-<ul *ngFor="let user of users">
-    <li>{{user.userName}}</li>
-</ul>
+<div *ngIf="role === 'User'">
+    <ul *ngFor="let user of users">
+        <li>{{user.userName}}</li>
+    </ul>
+</div>

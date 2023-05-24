@@ -3,6 +3,7 @@ import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms'
 import { Router } from '@angular/router';
 import ValidateForm from 'src/app/heplers/validateform';
 import { AuthService } from 'src/app/services/auth.service';
+import { UserStoreService } from 'src/app/services/user-store.service';
 
 @Component({
   selector: 'app-login',
@@ -20,7 +21,7 @@ export class LoginComponent implements OnInit{
 
   loginForm!:FormGroup; 
 
-  constructor(private fb:FormBuilder,private auth:AuthService,private router:Router) {
+  constructor(private fb:FormBuilder,private auth:AuthService,private router:Router,private userStore:UserStoreService) {
     
   }
 
@@ -41,7 +42,11 @@ export class LoginComponent implements OnInit{
         next:(res)=>{
           alert(res.message);
           this.loginForm.reset();
-          this.auth.storeToken(res.token);
+          this.auth.storeToken(res.accessToken);
+          this.auth.storeRefreshToken(res.refreshToken);
+          const tokenPayload=this.auth.decodedToken();
+          this.userStore.setFullNameForStore(tokenPayload.fullName);
+          this.userStore.setRoleForStore(tokenPayload.role);
           this.router.navigate(['dashboard']);
         },
         error:(err=>{
