@@ -8,13 +8,15 @@ import { SignupComponent } from './components/signup/signup.component';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { TokenInterceptor } from './components/interceptors/token.interceptor';
+import { ResetPasswordComponent } from './reset-password/reset-password.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     SignupComponent,
-    DashboardComponent
+    DashboardComponent,
+    ResetPasswordComponent
   ],
   imports: [
     BrowserModule,
