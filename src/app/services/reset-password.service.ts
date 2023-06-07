@@ -10,11 +10,11 @@ export class ResetPasswordService {
   private baseUrl:string = "https://localhost:7079/api/User/"
   constructor(private http:HttpClient) { }
 
-  SendResetPasswordLink(email:string){
-    return this.http.post<any>(`${this.baseUrl}/send-reset-email/${email}`,{});
+  sendResetPasswordLink(email:string){
+    return this.http.post<any>(`${this.baseUrl}send-reset-email/${email}`,{});
   }
 
   resetPassword(resetPasswordObj:ResetPassword){
-    return this.http.post<any>(`${this.baseUrl}/reset-password/`,resetPasswordObj);
+    return this.http.post<any>(`${this.baseUrl}reset-password/`,resetPasswordObj);
   }
 }

@@ -16,7 +16,7 @@ export class LoginComponent implements OnInit{
   isText:boolean=false;
   eyeIcon:string="fa-eye-slash";
   public resetPasswordEmail!:string;
-  public isValidEmail!:any;
+  public isValidEmail!:boolean;
 
   /**
    *
@@ -87,14 +87,11 @@ export class LoginComponent implements OnInit{
   confirmToSend(){
     if(this.checkValidEmail(this.resetPasswordEmail)){
       console.log(this.resetPasswordEmail);
-      
-
-
-      this.resetService.SendResetPasswordLink(this.resetPasswordEmail)
+      this.resetService.sendResetPasswordLink(this.resetPasswordEmail)
       .subscribe({
         next:(res)=>{
           this.resetPasswordEmail="";
-          const buttonRef =document.getElementById("closeBtn");
+          const buttonRef = document.getElementById("closeBtn");
           buttonRef?.click();
         },
         error:(err)=>{
