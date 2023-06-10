@@ -15,6 +15,6 @@ export class ResetPasswordService {
   }
 
   resetPassword(resetPasswordObj:ResetPassword){
-    return this.http.post<any>(`${this.baseUrl}reset-password/`,resetPasswordObj);
+    return this.http.post<any>(`${this.baseUrl}reset-password`,resetPasswordObj);
   }
 }

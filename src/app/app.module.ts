@@ -9,6 +9,12 @@ import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { TokenInterceptor } from './components/interceptors/token.interceptor';
 import { ResetPasswordComponent } from './reset-password/reset-password.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+import { ContentBodyComponent } from './components/content-body/content-body.component';
+import { NotFoundComponent } from './components/not-found/not-found.component';
+import { SidenavComponent } from './components/sidenav/sidenav.component';
+
 
 @NgModule({
   declarations: [
@@ -17,13 +23,17 @@ import { ResetPasswordComponent } from './reset-password/reset-password.componen
     SignupComponent,
     DashboardComponent,
     ResetPasswordComponent,
+    ContentBodyComponent,
+    SidenavComponent,
+    
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    BrowserAnimationsModule
   ],
   providers: [
     {
