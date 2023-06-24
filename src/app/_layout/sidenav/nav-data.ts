@@ -7,13 +7,13 @@ export const navbarData=[
 
     {
         routerLink:'login',
-        icon:'fal fa-home',
+        icon:'fal fa-user',
         label:'login'
     },
 
     {
         routerLink:'signup',
-        icon:'fal fa-home',
+        icon:'fal fa-user-plus',
         label:'signup'
     }
 
