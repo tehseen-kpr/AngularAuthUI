@@ -10,10 +10,10 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { TokenInterceptor } from './components/interceptors/token.interceptor';
 import { ResetPasswordComponent } from './reset-password/reset-password.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { BodyComponent } from './_layout/body/body.component';
+import { SidenavComponent } from './_layout/sidenav/sidenav.component';
 
-import { ContentBodyComponent } from './components/content-body/content-body.component';
-import { NotFoundComponent } from './components/not-found/not-found.component';
-import { SidenavComponent } from './components/sidenav/sidenav.component';
+
 
 
 @NgModule({
@@ -23,9 +23,8 @@ import { SidenavComponent } from './components/sidenav/sidenav.component';
     SignupComponent,
     DashboardComponent,
     ResetPasswordComponent,
-    ContentBodyComponent,
+    BodyComponent,
     SidenavComponent,
-    
   ],
   imports: [
     BrowserModule,
