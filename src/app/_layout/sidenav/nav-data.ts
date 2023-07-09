@@ -14,7 +14,18 @@ export const navbarData=[
     {
         routerLink:'signup',
         icon:'fal fa-user-plus',
-        label:'signup'
+        label:'signup',
+        items:[
+            {
+            routerLink:'component/login',
+            label:'signin'
+           },
+           {
+            routerLink:'component/login',
+            label:'signin'
+           }
+    ]
+        
     }
 
     
