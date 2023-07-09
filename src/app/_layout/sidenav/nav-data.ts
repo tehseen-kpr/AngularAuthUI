@@ -1,4 +1,6 @@
-export const navbarData=[
+import { INavbarData } from "./helpers";
+
+export const navbarData:INavbarData =[
     {
         routerLink:'dashboard',
         icon:'fal fa-dashboard',

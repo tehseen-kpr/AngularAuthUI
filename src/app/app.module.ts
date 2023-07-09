@@ -12,6 +12,7 @@ import { ResetPasswordComponent } from './reset-password/reset-password.componen
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { BodyComponent } from './_layout/body/body.component';
 import { SidenavComponent } from './_layout/sidenav/sidenav.component';
+import { SublevelMenuComponent } from './_layout/sidenav/sublevel-menu.component';
 
 
 
@@ -25,6 +26,7 @@ import { SidenavComponent } from './_layout/sidenav/sidenav.component';
     ResetPasswordComponent,
     BodyComponent,
     SidenavComponent,
+    SublevelMenuComponent,
   ],
   imports: [
     BrowserModule,
